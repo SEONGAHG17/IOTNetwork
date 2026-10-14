@@ -9,9 +9,9 @@ turning on digital signal ON and OFF
 how long it stays ON 
 
 
-if duty value is bigger >> ON state time is so quick.
+if duty value is bigger >> ON state time is so longer.
 if duty value is 50%    >> ON state time and OFF state time is equal.
-if duty value is lower  >> ON state time is so longer.
+if duty value is lower  >> ON state time is so quick.
 
 ## importent 
 - period : on/off cycle time
