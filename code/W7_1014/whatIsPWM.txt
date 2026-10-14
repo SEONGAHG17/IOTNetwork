@@ -1,1 +1,20 @@
-test
+PWM : Pulse Width Modulation
+
+pwm is digital signal.
+because signal's Voltage is (normally) HIGH or ROW  two state
+
+
+PWM is technique to control power
+turning on digital signal ON and OFF 
+how long it stays ON 
+
+
+if duty value is bigger >> ON state time is so quick.
+if duty value is 50%    >> ON state time and OFF state time is equal.
+if duty value is lower  >> ON state time is so longer.
+
+## importent 
+- period : on/off cycle time
+- prequerncy : 1 sec times. Hz
+- Duty cycle : on state rate in one period
+
