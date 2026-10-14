@@ -9,3 +9,10 @@ because WiringPi issue
 so, need the terminal command
 
 python3 -m venv --system-site-packages newvenv
+
+
+## IN newvenv!! in your terminal
+
+
+
+
