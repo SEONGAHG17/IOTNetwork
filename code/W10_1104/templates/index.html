@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>motion catch Control monitor</title>
+
+    <!-- <script>
+        function updateState(){
+            fetch('/state')
+            .then(Response => Response.json())
+            .then(data => {
+                if(data.state == "Motion Detect"){
+                    document.getElementById("move").style.color='red'
+                }else {
+                    document.getElementById("move").style.color='blue'
+                }
+                document.getElementById("move").innerText=data.state
+            })
+        }
+
+        window.onload = function(){
+            updateState()
+            setInterval(updateState, 1000)
+        }
+    </script>    -->
+
+    <style>
+        body{
+            font-family: Arial, Helvetica, sans-serif;
+            text-align: center; margin-top: 100px;
+        }
+        button{
+            font-size: 24px;
+            padding: 15px 30px;
+            margin: 20px;
+            border-radius: 10;
+            border: none;
+            cursor: pointer;
+            border-color: bisque;
+        }
+
+    </style> 
+</head>
+<body>
+
+    <h1>RPI  : Motion Monitoring</h1>
+    
+    <!-- prof. ver.  -->
+    <a href="/start">
+        <button> Starting Catch Motion </button>
+    </a>
+    <a href="/reset">
+        <button> Starting Catch Motion </button>
+    </a>
+ 
+
+    <!-- power point ver.  -->
+    <!-- <a href="/on">
+        <button> Starting Catch Motion </button>
+    </a>
+
+    <a href="/off">
+        <button> Ending Catch Motion </button>
+    </a> -->
+
+    <p>
+        Motion State : <b id="move"> 0 </b>
+    </p>
+</body>
+</html>
