@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>WATER</title>
+   
+        <script>
+        function updateState(){
+            fetch('/water')
+            .then(Response => Response.json())
+            .then(data => {
+                if(data.water != '0'){
+                    document.getElementById("val").style.color = "red"
+                }else{
+                    document.getElementById("val").style.color = "blue"
+                }
+                    document.getElementById("val").innerHTML=data.water
+                }
+            )
+        }
+
+        window.onload = function(){
+            updateState()
+            setInterval(updateState, 1000)
+        }
+    </script> 
+
+    <style>
+        body{
+            font-family: Arial, Helvetica, sans-serif;
+            text-align: center; margin-top: 100px;
+        }
+        button{
+            font-size: 24px;
+            padding: 15px 30px;
+            margin: 20px;
+            border: none;
+            cursor: pointer;
+            border-color: bisque;
+        }
+
+    </style> 
+</head>
+<body>
+
+    <h1>RPI  : Measure Water</h1>
+    
+    <a href="/on">
+        <button> Start Measure Water </button>
+    </a>
+    <a href="/off">
+        <button> Stop Measure Water </button>
+    </a>
+    <p>distance : <b id="val">0</b></p>
+</body>
+</html>
