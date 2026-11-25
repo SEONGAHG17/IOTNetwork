@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Temptation & Humidity</title>
+   
+        <script>
+        function updateState(){
+            fetch('/th')
+            .then(Response => Response.json())
+            .then(data => {
+                if(data.temp != '0'){
+                    document.getElementById("val_temp").style.color = "red"
+                }else{
+                    document.getElementById("val_temp").style.color = "blue"
+                }
+                document.getElementById("val_temp").innerHTML=data.temp
+                
+                if(data.humid != '0'){
+                    document.getElementById("val_humid").style.color = "red"
+                }else{
+                    document.getElementById("val_humid").style.color = "yellow"
+                }
+                document.getElementById("val_humid").innerHTML=data.humid
+            })
+        }
+
+        window.onload = function(){
+            updateState()
+            setInterval(updateState, 1000)
+        }
+    </script> 
+
+    <style>
+        body{
+            font-family: Arial, Helvetica, sans-serif;
+            text-align: center; margin-top: 100px;
+        }
+        button{
+            font-size: 24px;
+            padding: 15px 30px;
+            margin: 20px;
+            border-radius: 10;
+            border: none;
+            cursor: pointer;
+            border-color: bisque;
+        }
+
+    </style> 
+</head>
+<body>
+
+    <h1>RPI  : Measure temptation & humidity</h1>
+    
+
+    <a href="/on">
+        <button> START Temp/Humidity </button>
+    </a>
+    <a href="/off">
+        <button> STOP Temp/Humidity </button>
+    </a>
+
+    <h1>RPI  : Control LED</h1>
+    <a href="/on">
+        <button> <button>LED ON</button>
+    </a>
+    <a href="/off">
+        <button>LED OFF</button>
+    </a>
+
+    <p> Temption : <b id="val_temp">0</b></p>
+    <p> Humid : <b id="val_humid">0</b></p>
+
+</body>
+</html>
